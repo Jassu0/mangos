@@ -2,6 +2,35 @@ class tree
 {
 	constructor(x,y)
 	{
+		var options={
+			isStatic:true			
+			}
+		this.x=x;
+		this.y=y;
+		this.w= 50
+		this.h= 600
+		this.body=Bodies.rectangle(x, y, 50, 600 , options);
+ 		World.add(world, this.body);
+		 this.image=loadImage("images/tree.png");
+	}
+	display()
+	{
+			var groundPos=this.body.position;		
+			push()
+			translate(groundPos.x, groundPos.y);
+			imageMode(CENTER)
+			//strokeWeight(4);
+			fill(128,128,128)
+			image(this.image,0,0,450, this.h);
+			pop()
+			
+	}
+
+}
+/*class tree
+{
+	constructor(x,y)
+	{
 		this.x=x;
 		this.y=y;
 		this.dustbinWidth=450;
@@ -31,3 +60,4 @@ class tree
 	}
 
 }
+*/
